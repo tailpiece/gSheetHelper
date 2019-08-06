@@ -1,7 +1,7 @@
 {
   "name": "googleスプレッドシート間をコピペする",
   "description": "送信元・送信先を指定した後に、送信先のセルにカーソルを合わせ、送信元のセルをクリックしてください。",
-  "version": "0.2",
+  "version": "0.3",
   "manifest_version": 2,
   "icons": {
     "128": "icon.png"
@@ -14,14 +14,42 @@
     "default_title": ""
 	},
   "permissions": [
+    "tabs",
     "activeTab",
     "clipboardWrite",
-    "clipboardRead",
-    "background",
-    "https://docs.google.com/spreadsheets/*"
+    "clipboardRead"
   ],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "scripts": ["background.js"]
+  },
+  "commands": {
+    "myCommand1": {
+      "suggested_key": {
+        "default": "Ctrl+Up",
+        "mac": "MacCtrl+Up"
+      },
+      "description": "Send 'myCommand1' event to the extension"
+    },
+    "myCommand2": {
+      "suggested_key": {
+        "default": "Ctrl+Down",
+        "mac": "MacCtrl+Down"
+      },
+      "description": "Send 'myCommand2' event to the extension"
+    },
+    "myCommand3": {
+      "suggested_key": {
+        "default": "Ctrl+Left",
+        "mac": "MacCtrl+Left"
+      },
+      "description": "Send 'myCommand3' event to the extension"
+    },
+    "myCommand4": {
+      "suggested_key": {
+        "default": "Ctrl+Right",
+        "mac": "MacCtrl+Right"
+      },
+      "description": "Send 'myCommand4' event to the extension"
+    }
   }
 }
