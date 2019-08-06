@@ -1,0 +1,27 @@
+{
+  "name": "googleスプレッドシート間をコピペする",
+  "description": "送信元・送信先を指定した後に、送信先のセルにカーソルを合わせ、送信元のセルをクリックしてください。",
+  "version": "0.2",
+  "manifest_version": 2,
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [{
+    "matches": ["https://docs.google.com/spreadsheets/*"],
+    "js": ["lib/jquery-2.2.0.min.js","content_script.js"]
+  }],
+  "browser_action": {
+    "default_title": ""
+	},
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "clipboardRead",
+    "background",
+    "https://docs.google.com/spreadsheets/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
